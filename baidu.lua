@@ -46,8 +46,8 @@ function wa_lua_on_handshake_cb(ctx)
         local port = ctx_address_port(ctx)
         local res = 'CONNECT ' .. host .. ':' .. port .. ' HTTP/1.1\r\n' ..
                     'Host: ' .. host .. ':' .. port .. '\r\n' ..
-                    'User-Agent: okhttp/3.11.0 Dalvik/2.1.0 (Linux; U; Android 11; Redmi K30 5G Build/RKQ1.200826.002) baiduboxapp/11.0.5.12 (Baidu; P1 11)\r\n' ..
-                    'X-T5-Auth: ZjQxNDIh\r\n\r\n'
+                    'X-T5-Auth: ZjQxNDIh\r\n' ..
+                    'User-Agent: okhttp/3.11.0 Dalvik/2.1.0 (Linux; U; Android 11; Redmi K30 5G Build/RKQ1.200826.002) baiduboxapp/11.0.5.12 (Baidu; P1 11)\r\n\r\n' 
         ctx_write(ctx, res)
         flags[uuid] = kHttpHeaderSent
     end
